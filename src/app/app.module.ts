@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 
 import { AppComponent } from './app.component';
+import { ClubsComponent } from './clubs/clubs.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClubsComponent
   ],
   imports: [
     BrowserModule
