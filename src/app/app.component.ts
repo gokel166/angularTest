@@ -10,5 +10,6 @@ import { LocalStorageService } from './local-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'The first angular app';
 
 }
