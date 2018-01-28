@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ClubsService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   clubber = [
     'Blue', 'Red', 'Green', 'Orange'
