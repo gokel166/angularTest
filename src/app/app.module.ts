@@ -5,6 +5,7 @@ import { LocalStorageService } from './local-storage.service';
 
 import { AppComponent } from './app.component';
 import { ClubsComponent } from './clubs/clubs.component';
+import { ClubsService } from './clubs.service';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ClubsComponent } from './clubs/clubs.component';
     BrowserModule
   ],
   providers: [
-    LocalStorageService
+    LocalStorageService,
+    ClubsService
   ],
   bootstrap: [AppComponent]
 })

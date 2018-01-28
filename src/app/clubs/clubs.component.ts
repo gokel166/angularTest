@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClubsService } from '../clubs.service';
 
 @Component({
   selector: 'app-clubs',
