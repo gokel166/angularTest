@@ -1,12 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { LocalStorageService } from './local-storage.service';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { ClubsService } from './clubs.service';
+import { LocalStorageService } from './local-storage.service';
 import { ClubsComponent } from './clubs/clubs.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
+import { Club } from './club';
+
+const appRoutes: Routes = [
+  {
+    path: 'clubs',
+    component: ClubsComponent
+  },
+  {
+    path: '',
+    component: AppComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -14,11 +28,13 @@ import { HttpModule } from '@angular/http';
     ClubsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    HttpModule,
+    RouterModule,
   ],
-  providers: [
-    LocalStorageService
-  ],
+  providers: [ClubsService, HttpClient, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
