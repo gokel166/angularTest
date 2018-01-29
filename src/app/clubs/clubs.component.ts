@@ -11,8 +11,7 @@ import { Club } from '../club';
   providers: [ClubsService]
 })
 export class ClubsComponent implements OnInit {
-
-  form;
+  
   _clubArray: Club[];
 
   constructor(private clubsService: ClubsService) { }
@@ -26,10 +25,6 @@ export class ClubsComponent implements OnInit {
 
   ngOnInit() {
     this.getClubsInfo();
-    this.form = new FormGroup({
-      name: new FormControl("Gray"),
-      id: new FormControl("4")
-    })
   }
 
 }
