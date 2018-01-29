@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 
 import { Club } from './club';
 
 import { LocalStorageService } from './local-storage.service';
-import { ClubsService } from './clubs.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +11,12 @@ import { ClubsService } from './clubs.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private clubService: ClubsService) {}
+  constructor(private httpClient:HttpClient){}
 
-  ngOnInit() {
-    this.clubService.clubber;
-    console.log(this.clubService.clubber)
+  ngOnInit(): void {
+    //Make http request
+    this.httpClient.get('/assets/colors').subscribe(data => {
+      //this.results = data['results'];
+    })
   }
 }

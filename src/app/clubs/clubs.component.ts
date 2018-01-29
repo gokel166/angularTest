@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClubsService } from '../clubs.service';
+import { Http } from '@angular/http'
 
 @Component({
   selector: 'app-clubs',
@@ -8,7 +9,11 @@ import { ClubsService } from '../clubs.service';
 })
 export class ClubsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
+  
+  searchClub() {
+    this.http.get("");
+  }
 
   ngOnInit() {
   }

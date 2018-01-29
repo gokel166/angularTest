@@ -3,3 +3,44 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 250%;
 }
+#redOp {
+    background-color: rgb(126, 45, 45);
+    color: white;
+}
+
+#blueOp {
+    background-color: #2d495f;
+    color: white;
+}
+
+#skyOp {
+    background-color: #9CD2DE;
+    color: #1d1b1b
+}
+
+#whiteOp {
+    background-color: #FEFBFC;
+    color: #344213;
+}
+
+
+/* Hover elements*/
+#redOp:hover {
+    background-color: rgb(34, 30, 30);
+    color: white;
+}
+
+#blueOp:hover {
+    background-color: rgb(34, 30, 30);
+    color: white;
+}
+
+#skyOp:hover {
+    background-color: rgb(34, 30, 30);
+    color: white;
+}
+
+#whiteOp:hover {
+    background-color: rgb(34, 30, 30);
+    color: white;
+}
