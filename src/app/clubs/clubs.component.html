@@ -1,13 +1,23 @@
+<form class="form-inline">
+  <label class="sr-only" for="inlineFormInput">Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Color">
 
-<div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" id="redOp" href="#">Red</a>
-    <a class="dropdown-item" id="blueOp" href="#">Blue</a>
-    <a class="dropdown-item" id="skyOp"href="#">Sky</a>
-    <a class="dropdown-item" id="whiteOp" href="#">White</a>
+  <label class="sr-only" for="inlineFormInputGroup">Id</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">@</div>
+    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Id">
   </div>
-</div>
+
+  <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-danger">Remove</button>
+</form>
+<br>
+<hr>
+<br>
+<h2>Router Views:</h2>
