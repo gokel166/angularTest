@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-
-import { Club } from './club';
-
-import { LocalStorageService } from './local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +6,6 @@ import { LocalStorageService } from './local-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private httpClient:HttpClient){}
-
-  ngOnInit(): void {
-    //Make http request
-    this.httpClient.get('/assets/colors').subscribe(data => {
-      //this.results = data['results'];
-    })
-  }
+  title = 'Welcome to the Angular Test';
+  string = 'This is a statement';
 }
