@@ -10,7 +10,7 @@ export class ClubsService {
 
   private _assetURL = "../assets/colors.json";
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, locStore: LocalStorageService) { }
 
   getClubdata(): Observable<Club[]> {
     return this.http.get(this._assetURL)
@@ -18,6 +18,11 @@ export class ClubsService {
       return <Club[]>response.json()
     })
     .catch(this.handleError);
+  }
+
+  postClubs(){
+    this.http.get('./updateClubs').map(res => res.json())
+    .subscribe(postClubData => this._assetURL)
   }
 
   private handleError(error: Response) {

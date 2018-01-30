@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Http } from '@angular/http';
+import { Club } from './club';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to the Angular Test';
-  string = 'This is a statement';
+  clubsForm = new FormGroup({
+    name: new FormControl()
+  })
+  //
+  constructor(private fb: FormBuilder, http: Http) {
+    this.createForm();
+  }
+
+  // Create function for getting list of items 
+  
+
+  createForm() {
+    this.clubsForm = this.fb.group({
+      name: ['', Validators.required]
+    });
+  }
 }
