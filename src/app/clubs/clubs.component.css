@@ -50,3 +50,11 @@ body {
 #clubMainForm {
     margin-left: 20px;
 }
+
+#nChange {
+    background-color: gray;
+    margin-right: 140px;
+}
+.nav-link:hover {
+    color: orange;
+}
