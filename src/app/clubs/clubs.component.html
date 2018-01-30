@@ -1,21 +1,23 @@
-<form class="form-inline">
-  <label class="sr-only" for="inlineFormInput">Name</label>
-  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Color">
-
-  <label class="sr-only" for="inlineFormInputGroup">Id</label>
-  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-    <div class="input-group-addon">@</div>
-    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Id">
+<form id="clubMainForm">
+  <div class="form-group">
+    <label for="clubFormControlInput">Club</label>
+    <select id="clubOptions" class="form-control col-md-4">
+      <option>Red</option>
+      <option>Blue</option>
+      <option>Sky</option>
+      <option>White</option>
+    </select>
   </div>
-
-  <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-    <label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
+  <div class="form-group">
+    <label for="idFormSelect">Id</label>
+    <select id="idOptions" class="form-control col-md-4">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
   </div>
-
   <button type="submit" class="btn btn-primary">Submit</button>
-  <button type="submit" class="btn btn-danger">Remove</button>
 </form>
 <br>
 <hr>
