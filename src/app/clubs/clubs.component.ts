@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClubsService } from '../clubs.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Club } from '../club';
 import 'rxjs/add/operator/map';
@@ -16,6 +16,7 @@ export class ClubsComponent implements OnInit {
   _clubArray: Club[];
 
   
+  
 
   constructor(private clubsService: ClubsService) { }
 
@@ -26,6 +27,7 @@ export class ClubsComponent implements OnInit {
       error => console.log("Error :: " + error)
     )
   }
+  
   
 
   

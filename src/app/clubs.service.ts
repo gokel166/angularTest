@@ -9,7 +9,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class ClubsService {
-
+  successPost : string;
   private _assetURL = "http://localhost:4200/assets/colors.json";
   private handleError(error: Response) {
     return Observable.throw(error.statusText);
@@ -23,5 +23,12 @@ export class ClubsService {
     })
     .catch(this.handleError);
   }
+
+  updateClub(): Observable<Club[]> {
+    return this.http.post(this._assetURL, this.successPost).map((response: Response) => {
+      return <Club[]>response.json();
+    })
+  }
+
   
 }

@@ -1,4 +1,4 @@
-<form id="clubMainForm">
+<form id="clubMainForm" >
   <div class="form-group">
     <label for="clubFormControlInput">Club</label>
     <select id="clubOptions" class="form-control col-md-4">
@@ -9,9 +9,11 @@
     <label for="idFormSelect">Id</label>
     <select id="idOptions" class="form-control col-md-4">
       <option *ngFor="let club of _clubArray">{{club.id}}</option>
+      <p [formControl]="name"></p>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary" >Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="updateClub">Submit</button>
+  <button type="submit" class="btn btn-danger" (click)="removeClubs">Delete</button>
   <br>
   <br>
   <p id="nChange">Entry point for data after submission</p>
