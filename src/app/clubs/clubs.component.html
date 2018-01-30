@@ -1,23 +1,17 @@
 <form id="clubMainForm">
   <div class="form-group">
     <label for="clubFormControlInput">Club</label>
-    <select id="clubOptions" class="form-control col-md-4" [(ngModel)]="club" name="white">
-      <option>Red</option>
-      <option>Blue</option>
-      <option>Sky</option>
-      <option>{{name}}</option>
+    <select id="clubOptions" class="form-control col-md-4">
+      <option *ngFor="let club of _clubArray">{{club.name}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="idFormSelect">Id</label>
     <select id="idOptions" class="form-control col-md-4">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+      <option *ngFor="let club of _clubArray">{{club.id}}</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="makeRequest()">Submit{{data | json}}</button>
+  <button type="submit" class="btn btn-primary" >Submit</button>
   <br>
   <br>
   <p id="nChange">Entry point for data after submission</p>

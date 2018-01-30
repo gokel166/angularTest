@@ -20,16 +20,17 @@ export class ClubsComponent implements OnInit {
   constructor(private clubsService: ClubsService) { }
 
   
-  getClubsInfo(): void {
-    this.clubsService.getClubdata().subscribe(
+  getPosts(): void {
+    this.clubsService.getClubData().subscribe(
       resultArray => this._clubArray = resultArray,
       error => console.log("Error :: " + error)
-    )};
+    )
+  }
   
 
   
   ngOnInit() {
-    this.clubsService.makeRequest();
+    this.getPosts();
   }
 
   
