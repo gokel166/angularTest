@@ -1,11 +1,11 @@
 <form id="clubMainForm">
   <div class="form-group">
     <label for="clubFormControlInput">Club</label>
-    <select id="clubOptions" class="form-control col-md-4">
+    <select id="clubOptions" class="form-control col-md-4" [(ngModel)]="club" name="white">
       <option>Red</option>
       <option>Blue</option>
       <option>Sky</option>
-      <option>White</option>
+      <option>{{name}}</option>
     </select>
   </div>
   <div class="form-group">
@@ -17,7 +17,7 @@
       <option>4</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="makeRequest()">Submit{{data | json}}</button>
   <br>
   <br>
   <p id="nChange">Entry point for data after submission</p>

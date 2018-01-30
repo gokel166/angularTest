@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ClubsService } from '../clubs.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Club } from '../club';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-clubs',
@@ -14,8 +15,11 @@ export class ClubsComponent implements OnInit {
   
   _clubArray: Club[];
 
+  
+
   constructor(private clubsService: ClubsService) { }
 
+  
   getClubsInfo(): void {
     this.clubsService.getClubdata().subscribe(
       resultArray => this._clubArray = resultArray,
@@ -23,8 +27,11 @@ export class ClubsComponent implements OnInit {
     )
   }
 
+  
   ngOnInit() {
-    this.getClubsInfo();
+    this.clubsService.makeRequest();
   }
+
+  
 
 }

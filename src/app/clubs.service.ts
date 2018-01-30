@@ -4,13 +4,15 @@ import { LocalStorageService } from './local-storage.service';
 import { Observable } from 'rxjs/Observable';
 import { Club } from './club';
 import 'rxjs/Rx';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class ClubsService {
 
-  private _assetURL = "../assets/colors.json";
+  private _assetURL = 'http://localhost:4200/assets/colors.json';
 
-  constructor(private http: Http, locStore: LocalStorageService) { }
+  constructor(private http: Http) { }
 
   getClubdata(): Observable<Club[]> {
     return this.http.get(this._assetURL)
@@ -27,6 +29,16 @@ export class ClubsService {
 
   private handleError(error: Response) {
     return Observable.throw(error.statusText);
+  }
+
+  makeRequest(): void {
+    this.http.get(this._assetURL).subscribe(
+      data => console.log(data)
+  )};
+    
+  _errorHandler(error: Response) {
+    console.error(error);
+    return Observable.throw(error || "Server Error");
   }
 
   
