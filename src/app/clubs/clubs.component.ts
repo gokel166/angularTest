@@ -24,8 +24,8 @@ export class ClubsComponent implements OnInit {
     this.clubsService.getClubdata().subscribe(
       resultArray => this._clubArray = resultArray,
       error => console.log("Error :: " + error)
-    )
-  }
+    )};
+  
 
   
   ngOnInit() {

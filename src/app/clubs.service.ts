@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class ClubsService {
 
-  private _assetURL = 'http://localhost:4200/assets/colors.json';
+  private _assetURL = "http://localhost:4200/assets/colors.json";
 
   constructor(private http: Http) { }
 
@@ -23,7 +23,7 @@ export class ClubsService {
   }
 
   postClubs(){
-    this.http.get('./updateClubs').map(res => res.json())
+    this.http.get(this._assetURL).map(res => res.json())
     .subscribe(postClubData => this._assetURL)
   }
 
