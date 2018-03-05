@@ -22,6 +22,6 @@ export class ClubsService {
     const id = typeof club === 'number' ? club : club.id;
     const url = `${this._assetURL}/${id}`;
 
-    return this.http.delete<Club>(url, id, httpOptions);
+    return this.http.delete<Club>(url, httpOptions);
   }
 }

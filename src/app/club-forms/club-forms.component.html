@@ -2,7 +2,9 @@
   <div class="form-group">
     <label>Club</label>
     <select id="clubOptions" class="form-control col-md-4">
-      <option *ngFor="let club of clubArr" value="Green">{{ club?.id }} {{ club?.name }}</option>
+      <option *ngFor="let club of clubArr" value="Green">
+        <div>{{ club?.id }} {{ club?.name }}</div>
+      </option>
       <p #id></p>
       <p #name></p>
     </select>

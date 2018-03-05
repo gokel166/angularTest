@@ -29,10 +29,11 @@ export class ClubFormsComponent implements OnInit {
     this.clubArr.unshift(clubs);
   }
 
-  onSubmit(id, name) {
+  onSubmit(id, name, clubs) {
     this.localStorageService.addClub({id, name} as Club).subscribe(club => {
       console.log(club.name, 'Ready');
       this.newClub.emit(club);
+
     });
   }
 
