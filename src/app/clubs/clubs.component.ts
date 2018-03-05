@@ -25,4 +25,6 @@ export class ClubsComponent implements OnInit {
   onNewClub(clubArr: Club) {
     this.clubArray.push(clubArr);
   }
+
+
 }

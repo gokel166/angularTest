@@ -18,7 +18,10 @@ export class ClubsService {
     return this.http.get<Club[]>(this._assetURL);
   }
 
-  saveClubPost(clubArr: Club): Observable<Club> {
-    return this.http.post<Club>(this._assetURL, clubArr, httpOptions);
+  removeExClub(club: Club | number): Observable<Club> {
+    const id = typeof club === 'number' ? club : club.id;
+    const url = `${this._assetURL}/${id}`;
+
+    return this.http.delete<Club>(url, httpOptions);
   }
 }

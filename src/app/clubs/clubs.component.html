@@ -6,5 +6,5 @@
 <hr>
 <br>
 
- <app-club-forms (newClub)="onNewClub($event)"></app-club-forms>
+ <app-club-forms *ngFor="let c of clubArray" (newClub)="onNewClub(c)"></app-club-forms>
 <h2>Router Views:</h2>
