@@ -19,6 +19,10 @@ export class ClubFormsComponent implements OnInit {
     this.localStorageService.getClubs().subscribe(clubArr => {
       this.clubArr = clubArr;
     });
+    this.localStorageService.getClubs().subscribe(clubsArr => {
+      this.clubArr = clubsArr;
+      console.log(clubsArr, 'Complete local array');
+    });
   }
 
   onNewClub(clubs: Club) {
@@ -27,7 +31,7 @@ export class ClubFormsComponent implements OnInit {
 
   onSubmit(id, name) {
     this.localStorageService.addClub({id, name} as Club).subscribe(club => {
-      console.log(club);
+      console.log(club.name, 'Ready');
       this.newClub.emit(club);
     });
   }

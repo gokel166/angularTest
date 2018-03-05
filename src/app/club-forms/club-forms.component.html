@@ -2,12 +2,12 @@
   <div class="form-group">
     <label>Club</label>
     <select id="clubOptions" class="form-control col-md-4">
-      <option *ngFor="let club of clubArr" value="Green">{{ club.id }} {{ club.name }}</option>
+      <option *ngFor="let club of clubArr" value="Green">{{ club?.id }} {{ club?.name }}</option>
       <p #id></p>
       <p #name></p>
     </select>
     <button type="submit" class="btn btn-primary" (click)="onNewClub($event)">Submit</button>
-    <button type="submit" class="btn btn-danger" (click)="deleteClub(clubArr)">Delete</button>
+    <button type="submit" class="btn btn-danger" (click)="deleteClub($event)">Delete</button>
   </div>
 
   <br>

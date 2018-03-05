@@ -12,7 +12,7 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class ClubsComponent implements OnInit {
   clubArray: Club[];
-  constructor(private clService: ClubsService) {
+  constructor(private clService: ClubsService, private localStorageService: LocalStorageService) {
   }
 
   ngOnInit() {

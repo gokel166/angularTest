@@ -19,10 +19,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.localStorageService.getClubs().subscribe(clubsAr => {
-      this.clubsAr = clubsAr;
-      console.log(clubsAr);
-    });
   }
 
 
