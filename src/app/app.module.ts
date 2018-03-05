@@ -31,7 +31,6 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    HttpModule,
     RouterModule,
     ReactiveFormsModule
   ],
