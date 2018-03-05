@@ -13,13 +13,17 @@ import {HttpClientModule} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  clubsForm = new FormGroup({
-    name: new FormControl()
-  })
+  clubsAr: Club[];
 
-  constructor() {
+  constructor(private localStorageService: LocalStorageService) {
   }
 
+  ngOnInit(){
+    this.localStorageService.getClubs().subscribe(clubsAr => {
+      this.clubsAr = clubsAr;
+      console.log(clubsAr);
+    });
+  }
 
 
 

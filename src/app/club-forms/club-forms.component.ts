@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
 import { Club } from '../club';
 
@@ -8,14 +8,27 @@ import { Club } from '../club';
   styleUrls: ['./club-forms.component.css']
 })
 export class ClubFormsComponent implements OnInit {
-  club: Club;
+  clubArr: Club[];
+  @Output() newClub: EventEmitter<Club> = new EventEmitter<Club>();
+
   constructor(private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
-    this.club = new Club({
-      id: null,
-      name: ''
+    this.localStorageService.getClubs().subscribe(clubArr => {
+      this.clubArr = clubArr;
     });
+  }
+
+  addClubPost(id, name) {
+    if (!id || !name) {
+      alert('Please add club');
+    } else {
+      this.localStorageService.addClub({id, name} as Club).subscribe(club => { this.newClub.emit(club); });
+    }
+  }
+
+  onNewClub(clubs: Club) {
+    this.clubArr.unshift(clubs);
   }
 
 }
