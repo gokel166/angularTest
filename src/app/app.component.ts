@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private localStorageService: LocalStorageService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.localStorageService.getClubs().subscribe(clubsAr => {
       this.clubsAr = clubsAr;
       console.log(clubsAr);

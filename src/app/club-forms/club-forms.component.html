@@ -1,13 +1,15 @@
-<form id="clubMainForm" >
+<form id="clubMainForm" #userForm = 'ngForm' (ngSubmit) = "onSubmit(userForm.value)">
   <div class="form-group">
     <label>Club</label>
     <select id="clubOptions" class="form-control col-md-4">
-      <option *ngFor="let club of clubArr">({{ club.id }}) {{ club.name }}</option>
+      <option *ngFor="let club of clubArr" value="Green">{{ club.id }} {{ club.name }}</option>
+      <p #id></p>
+      <p #name></p>
     </select>
+    <button type="submit" class="btn btn-primary" (click)="onNewClub($event)">Submit</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
   </div>
 
-  <button type="submit" class="btn btn-primary" (click)="addClubPost()">Submit</button>
-  <button type="submit" class="btn btn-danger">Delete</button>
   <br>
   <br>
   <p id="nChange">Entry point for data after submission</p>

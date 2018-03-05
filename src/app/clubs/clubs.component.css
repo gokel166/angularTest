@@ -1,10 +1,15 @@
 .card {
-  background-color: #2d495f;
+  background-color: #2e343d;
   color: white;
   margin-left: 20px;
 }
 
-ul,li {
-  margin-bottom: auto;
-  margin-left: 18px;
+h4 {
+  background-color: white;
+  color: #7f582f;
+  border-style: none;
+  padding: 5px;
+}
+p.card-text {
+  margin-left: 5px;
 }

@@ -1,6 +1,6 @@
 export class Club {
-  id: number
-  name: string
+  id?: number
+  name?: string
   city: string
   color: number
   isTopFour: boolean
