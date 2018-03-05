@@ -10,6 +10,7 @@ import { ClubsService } from './clubs.service';
 import { LocalStorageService } from './local-storage.service';
 import { ClubsComponent } from './clubs/clubs.component';
 import { Club } from './club';
+import { ClubFormsComponent } from './club-forms/club-forms.component';
 
 const appRoutes: Routes = [
   {
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ClubsComponent
+    ClubsComponent,
+    ClubFormsComponent
   ],
   imports: [
     BrowserModule,

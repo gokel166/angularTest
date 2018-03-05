@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClubsService } from '../clubs.service';
 import { Club } from '../club';
 import 'rxjs/add/operator/map';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-clubs',
@@ -10,29 +11,16 @@ import 'rxjs/add/operator/map';
   providers: [ClubsService]
 })
 export class ClubsComponent implements OnInit {
-
-  _clubArray: Club[];
-
-
-
-
-  constructor(private clubsService: ClubsService) { }
-
-
-  getPosts(): void {
-    this.clubsService.getClubData().subscribe(
-      resultArray => this._clubArray = resultArray,
-      error => console.log("Error :: " + error)
-    )
+  clubArray: Club[];
+  constructor(private clService: ClubsService) {
   }
-
-
-
 
   ngOnInit() {
-    this.getPosts();
+    this.clService.getClubPosts().subscribe(clubArray => {
+      console.log(clubArray);
+      this.clubArray = clubArray;
+    });
   }
-
 
 
 }

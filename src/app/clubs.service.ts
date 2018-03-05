@@ -1,34 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { LocalStorageService } from './local-storage.service';
-import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Club } from './club';
-import 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ClubsService {
-  successPost : string;
-  private _assetURL = "http://localhost:4200/assets/colors.json";
-  private handleError(error: Response) {
-    return Observable.throw(error.statusText);
+  clubArray: Club[];
+  private _assetURL = 'http://localhost:4200/assets/colors.json';
+
+  constructor(private http: HttpClient) { }
+  // remaining function calls only contain http call functions
+  getClubPosts(): Observable<Club[]> {
+    return this.http.get<Club[]>(this._assetURL);
   }
-
-  constructor(private http: Http) { }
-
-  getClubData(): Observable<Club[]> {
-    return this.http.get(this._assetURL).map((response: Response) => {
-      return <Club[]>response.json();
-    })
-    .catch(this.handleError);
-  }
-
-  updateClub(): Observable<Club[]> {
-    return this.http.post(this._assetURL, this.successPost).map((response: Response) => {
-      return <Club[]>response.json();
-    })
-  }
-
-  
 }

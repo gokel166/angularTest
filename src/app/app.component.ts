@@ -5,6 +5,7 @@ import { Club } from './club';
 import { ClubsComponent } from './clubs/clubs.component';
 import { LocalStorageService } from './local-storage.service';
 import { ClubsService } from './clubs.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +16,11 @@ export class AppComponent {
   clubsForm = new FormGroup({
     name: new FormControl()
   })
-  
-  constructor(private fb: FormBuilder, http: Http) {
-    this.createForm();
+
+  constructor() {
   }
 
 
 
-  createForm() {
-    this.clubsForm = this.fb.group({
-      name: ['', Validators.required]
-    });
-  }
 
-  
 }
